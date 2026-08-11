@@ -1,10 +1,10 @@
-<table align="center">
-  <tr>
-    <td align="center" bgcolor="#ffffff">
-      <img src="assets/aivo-logo.png" width="240" alt="aivo 로고" />
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/aivo-logo-light.png" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/aivo-logo.png" />
+    <img src="assets/aivo-logo.png" width="240" alt="aivo 로고" />
+  </picture>
+</p>
 
 <h1 align="center">aivo</h1>
 

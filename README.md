@@ -142,19 +142,12 @@ flowchart TB
 
 aivo는 아래 6명이 함께 만든 프로젝트입니다.
 
-| 팀원 |
-| --- |
-| 박민규 · 서가은 · 윤성빈 · 윤재용 · 채승규 · 최현철 |
-
-역할은 Frontend 1명, Backend 3명, AI 1명, Infrastructure 1명으로 구성했습니다.
-
-| 구성 | 인원 |
+| 역할 | 팀원 |
 | --- | --- |
-| Backend | 3 |
-| Frontend | 1 |
-| AI | 1 |
-| Infrastructure | 1 |
-| 합계 | 6 |
+| Backend | 최현철 · 윤성빈 · 채승규 |
+| Frontend | 서가은 |
+| AI | 박민규 |
+| Infrastructure | 윤재용 |
 
 ## 링크
 

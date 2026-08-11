@@ -6,8 +6,6 @@
   </picture>
 </p>
 
-<h1 align="center">aivo</h1>
-
 <p align="center">
   <strong>AI 발표·면접 코칭 서비스</strong><br />
   혼자 하는 연습에, 확신을 더하다.
@@ -20,8 +18,10 @@
 </p>
 
 <p align="center">
-  SSAFY 15기 공통 프로젝트 &nbsp;·&nbsp; Team 백구
+  SSAFY 15기 공통 프로젝트 &nbsp;·&nbsp; 백구
 </p>
+
+> 이 저장소는 aivo의 서비스 경험과 핵심 기술 구현을 소개하는 공개 포트폴리오입니다.
 
 > aivo는 발표와 면접을 준비하는 사용자가 혼자서도 자신의 말하기 습관을 발견하고 다음 연습의 방향을 정할 수 있도록, 연습 과정의 음성·영상·답변을 분석해 맞춤 피드백과 누적 기록으로 연결하는 코칭 서비스입니다.
 
@@ -109,9 +109,9 @@ flowchart LR
 | 생성 코칭 이벤트 | **8개** |
 | 전사 시간 | **8.731초** |
 | Real-time factor | **0.0751** (약 13.3배 빠른 전사) |
-| 검증 | 발표 코칭 테스트 **27 passed** |
+| 검증 이력 | 실험 당시 발표 코칭 테스트 **27 passed** |
 
-> NVIDIA GeForce RTX 4050 Laptop GPU에서 단일 한국어 발표 음성을 실행한 결과입니다. 전사 시간과 자원 사용량은 오디오 길이·GPU·모델 캐시 상태에 따라 달라집니다. 분석 결과는 발표 코칭을 위한 지표이며 의료적 진단에 사용하지 않습니다.
+> NVIDIA GeForce RTX 4050 Laptop GPU에서 단일 한국어 발표 음성을 실행한 실험 결과입니다. 전사 시간과 자원 사용량은 오디오 길이·GPU·모델 캐시 상태에 따라 달라집니다. `27 passed`는 해당 실험 시점의 발표 코칭 테스트 검증 이력입니다. 분석 결과는 발표 코칭을 위한 지표이며 의료적 진단에 사용하지 않습니다.
 
 ## 기술 스택
 
@@ -128,14 +128,18 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    U[사용자] --> W[웹 경험]
-    W --> P[연습·피드백 기능]
-    W --> M[브라우저 미디어 분석]
-    P --> A[음성·내용 분석]
-    P --> R[연습 기록]
-    A --> F[맞춤 리포트]
-    R --> F
-    F --> U
+    U[사용자] --> FE[Vue 3 웹 클라이언트]
+    FE --> MEDIA[MediaPipe · Web Audio API]
+    FE <-->|REST · WebSocket| API[Spring Boot API]
+    API --> DB[(PostgreSQL)]
+    API --> CACHE[(Redis)]
+    API --> MQ[RabbitMQ]
+    MQ --> AI[STT · LLM · 비전 분석]
+    AI --> DB
+    API --> REPORT[맞춤 리포트]
+    REPORT --> FE
+    DOCKER[Docker · GitHub Actions · GHCR] -. 배포 .-> FE
+    DOCKER -. 배포 .-> API
 ```
 
 ## Team 백구

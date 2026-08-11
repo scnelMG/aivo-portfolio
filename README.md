@@ -52,8 +52,8 @@
 발표 제목·설명과 자료를 입력하고, 기존 자료 재사용·질의응답 모드·목표 발표 시간을 설정합니다. 발표 중에는 현재 슬라이드와 실시간 발화 내용을 보며 말하기 속도·추임새·시선·기울어짐을 한 화면에서 확인합니다.
 
 <p align="center">
-  <img src="assets/features/presentation-setup.png" width="49%" alt="발표 연습 자료 설정과 질의응답 모드, 목표 발표 시간 설정 화면" />
-  <img src="assets/features/presentation-live.png" width="49%" alt="슬라이드 발표 중 실시간 발화와 말하기 습관을 분석하는 화면" />
+  <img src="assets/features/framed/presentation-setup-frame.png" width="49%" alt="발표 연습 자료 설정과 질의응답 모드, 목표 발표 시간 설정 화면" />
+  <img src="assets/features/framed/presentation-live-frame.png" width="49%" alt="슬라이드 발표 중 실시간 발화와 말하기 습관을 분석하는 화면" />
 </p>
 
 ### 02. 발표 리포트 — 음성·몸짓·내용을 슬라이드별로
@@ -61,7 +61,7 @@
 연습이 끝나면 음성·몸짓·내용 점수와 구간별 말하기 속도, 추임새·침묵 같은 근거를 확인합니다. 사용자는 개선이 필요한 순간을 찾아 다음 발표의 목표로 연결할 수 있습니다.
 
 <p align="center">
-  <img src="assets/features/presentation-report.png" width="100%" alt="발표 연습의 종합 점수와 음성, 몸짓, 내용 분석 및 구간별 말하기 속도 리포트" />
+  <img src="assets/features/framed/presentation-report-frame.png" width="100%" alt="발표 연습의 종합 점수와 음성, 몸짓, 내용 분석 및 구간별 말하기 속도 리포트" />
 </p>
 
 ### 03. AI 면접 — 면접관과 질문을 내 맥락에 맞게
@@ -69,8 +69,8 @@
 원하는 면접관 페르소나를 선택하고, 직무·경험·지원 맥락을 반영한 질문을 생성해 면접을 진행합니다. 같은 이력이라도 면접관의 성향에 따라 다른 방식으로 연습할 수 있습니다.
 
 <p align="center">
-  <img src="assets/features/interview-persona.png" width="49%" alt="실무 중심형, 성장 코칭형, 압박 검증형 AI 면접관을 선택하는 화면" />
-  <img src="assets/features/interview-questions.png" width="49%" alt="지원 맥락을 바탕으로 생성된 AI 면접 질문 목록" />
+  <img src="assets/features/framed/interview-persona-frame.png" width="49%" alt="실무 중심형, 성장 코칭형, 압박 검증형 AI 면접관을 선택하는 화면" />
+  <img src="assets/features/framed/interview-questions-frame.png" width="49%" alt="지원 맥락을 바탕으로 생성된 AI 면접 질문 목록" />
 </p>
 
 ### 04. 면접 리포트 — 답변 내용과 전달력을 함께
@@ -78,7 +78,7 @@
 면접 결과를 음성·몸짓·내용 일치 관점에서 종합하고, 관련성·구조·명확성·전달력에 대한 피드백을 제공합니다. 숫자로 끝나지 않고 다음 답변에서 보완할 점을 확인할 수 있습니다.
 
 <p align="center">
-  <img src="assets/features/interview-report.png" width="100%" alt="AI 면접의 종합 점수와 음성, 몸짓, 내용 일치 및 세부 피드백 리포트" />
+  <img src="assets/features/framed/interview-report-frame.png" width="100%" alt="AI 면접의 종합 점수와 음성, 몸짓, 내용 일치 및 세부 피드백 리포트" />
 </p>
 
 ## 연습 → 분석 → 기록

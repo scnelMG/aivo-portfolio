@@ -1,6 +1,10 @@
-<p align="center">
-  <img src="assets/aivo-logo.png" width="260" alt="aivo 로고" />
-</p>
+<table align="center">
+  <tr>
+    <td align="center" bgcolor="#ffffff">
+      <img src="assets/aivo-logo.png" width="240" alt="aivo 로고" />
+    </td>
+  </tr>
+</table>
 
 <h1 align="center">aivo</h1>
 
@@ -16,7 +20,7 @@
 </p>
 
 <p align="center">
-  <code>SSAFY 15기</code>&nbsp;&nbsp; <code>팀 백구</code>&nbsp;&nbsp; <code>Web Application</code>&nbsp;&nbsp; <code>6 members</code>
+  SSAFY 15기 공통 프로젝트 &nbsp;·&nbsp; Team 백구
 </p>
 
 > aivo는 발표와 면접을 준비하는 사용자가 혼자서도 자신의 말하기 습관을 발견하고 다음 연습의 방향을 정할 수 있도록, 연습 과정의 음성·영상·답변을 분석해 맞춤 피드백과 누적 기록으로 연결하는 코칭 서비스입니다.
@@ -128,7 +132,9 @@ flowchart TB
     F --> U
 ```
 
-## 팀
+## Team 백구
+
+aivo는 Frontend 1명, Backend 3명, AI 1명, Infrastructure 1명으로 구성된 **6인 팀 프로젝트**입니다.
 
 | 구성 | 인원 |
 | --- | --- |

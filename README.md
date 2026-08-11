@@ -68,6 +68,8 @@
 
 원하는 면접관 페르소나를 선택하고, 직무·경험·지원 맥락을 반영한 질문을 생성해 면접을 진행합니다. 같은 이력이라도 면접관의 성향에 따라 다른 방식으로 연습할 수 있습니다.
 
+직무와 경력을 기본으로 회사·JD·자기소개서·포트폴리오를 선택 입력받습니다. LLM이 문서에서 프로젝트·기술·경험과 추가 확인이 필요한 근거를 정리한 뒤, 공통·인성·직무 기본 질문을 포함하는 규칙 기반 구성을 확정합니다. 이후 AI Hub 채용면접 데이터의 직군별 질문 유형을 참고해, 사용자의 맥락에 맞는 질문과 확인 포인트를 생성합니다.
+
 <p align="center">
   <img src="assets/features/framed/interview-persona-frame.png" width="49%" alt="실무 중심형, 성장 코칭형, 압박 검증형 AI 면접관을 선택하는 화면" />
   <img src="assets/features/framed/interview-questions-frame.png" width="49%" alt="지원 맥락을 바탕으로 생성된 AI 면접 질문 목록" />
@@ -120,9 +122,9 @@ flowchart LR
 | Web | Vue 3, Vite, Pinia, Vue Router |
 | Media | MediaPipe, Web Audio API |
 | Application | Java, Spring Boot, Spring Security, Spring Data JPA, WebSocket |
-| AI | faster-whisper-large-v3-turbo, LLM, MediaPipe Tasks Vision |
+| AI | faster-whisper-large-v3-turbo, LLM, MediaPipe Tasks Vision, Silero VAD |
 | Data | PostgreSQL, Redis, RabbitMQ |
-| Delivery | Docker, GitHub Actions, GitHub Container Registry |
+| Delivery | Docker, GitHub Actions, GitHub Container Registry, Spring Boot Actuator |
 
 ## 아키텍처
 
@@ -134,12 +136,14 @@ flowchart TB
     API --> DB[(PostgreSQL)]
     API --> CACHE[(Redis)]
     API --> MQ[RabbitMQ]
-    MQ --> AI[STT · LLM · 비전 분석]
+    MQ --> AI[STT · LLM · 비전 분석 워커]
     AI --> DB
     API --> REPORT[맞춤 리포트]
     REPORT --> FE
-    DOCKER[Docker · GitHub Actions · GHCR] -. 배포 .-> FE
-    DOCKER -. 배포 .-> API
+    ACTIONS[GitHub Actions] --> GHCR[GitHub Container Registry]
+    GHCR --> DOCKER[Docker 배포]
+    DOCKER --> API
+    API --> HEALTH[Actuator 헬스체크]
 ```
 
 ## Team 백구

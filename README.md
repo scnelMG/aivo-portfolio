@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="code/README.md">AI 음성 분석 공개 코드 보기</a>
+  <a href="SOURCE_SNAPSHOT.md">공개 소스 구조 보기</a>
 </p>
 
 <p align="center">

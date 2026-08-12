@@ -1,0 +1,19 @@
+# Never publish local secrets or runtime configuration in the portfolio snapshot.
+**/.env
+**/.env.*
+
+# Runtime and build artifacts
+**/__pycache__/
+**/*.py[cod]
+**/node_modules/
+**/.gradle/
+**/build/
+**/target/
+**/.pytest_cache/
+**/*.log
+
+# User and model data
+uploads/
+artifacts/
+models/**/cache/
+*.dump

@@ -7,6 +7,10 @@
 </p>
 
 <p align="center">
+  <a href="code/README.md">AI 음성 분석 공개 코드 보기</a>
+</p>
+
+<p align="center">
   <strong>AI 발표·면접 코칭 서비스</strong><br />
   혼자 하는 연습에, 확신을 더하다.
 </p>

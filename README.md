@@ -25,9 +25,20 @@
   SSAFY 15기 공통 프로젝트 &nbsp;·&nbsp; 백구
 </p>
 
+<p align="center">
+  <code>Web Service</code> &nbsp;·&nbsp; <code>6인 팀</code> &nbsp;·&nbsp; <code>박민규 · AI Engineering</code>
+</p>
+
 > 이 저장소는 aivo의 서비스 경험과 핵심 기술 구현을 소개하는 공개 포트폴리오입니다.
 
 > aivo는 발표와 면접을 준비하는 사용자가 혼자서도 자신의 말하기 습관을 발견하고 다음 연습의 방향을 정할 수 있도록, 연습 과정의 음성·영상·답변을 분석해 맞춤 피드백과 누적 기록으로 연결하는 코칭 서비스입니다.
+
+| 구분 | 내용 |
+| --- | --- |
+| 플랫폼 | 발표·면접 연습을 위한 웹 서비스 |
+| 팀 구성 | SSAFY 15기 공통 프로젝트 · 백구 · 6인 |
+| 나의 책임 | 한국어 STT 설정, 짧은 필러 보완, 발화 이벤트·점수 산출 파이프라인 |
+| 검증 맥락 | 실제 서비스 화면, GPU 스모크 실행, 외부 유저 테스트 피드백 17건 |
 
 ## 목차
 
@@ -38,6 +49,7 @@
 - [AI 음성 분석 구현](#ai-음성-분석-구현)
 - [AI 기여 및 의사결정](#ai-기여-및-의사결정)
 - [외부 유저 테스트](#외부-유저-테스트)
+- [공개 소스 범위](#공개-소스-범위)
 - [기술 스택](#기술-스택)
 - [아키텍처](#아키텍처)
 - [Team 백구](#team-백구)
@@ -158,6 +170,16 @@ AIVO는 SSAFY 공통 프로젝트 유저 테스트 프로그램에 선정되어,
 
 > 이 결과는 피드백을 수집한 사실과 개선 기회를 보여줍니다. 모든 항목을 해결했거나 서비스 효과가 검증되었다는 뜻은 아닙니다. 익명화한 상세 정리는 [외부 유저 테스트](docs/user-testing.md)에서 확인할 수 있습니다.
 
+## 공개 소스 범위
+
+이 저장소는 운영 서비스 전체를 복제한 실행 레포가 아니라, 실제 서비스 화면과 핵심 구현을 검토할 수 있도록 정리한 공개 스냅샷입니다. 특히 박민규가 담당한 발표 음성 분석 코드는 [`models/filer/src/`](backend-fastapi-main/models/filer/src/)에서 확인할 수 있습니다.
+
+- **검토 가능한 구현**: 한국어 단어 타임스탬프 전사, 8초 재전사 기반 필러 보완, VAD·피치·RMS 기반 발화 이벤트·점수 산출
+- **공개하지 않은 운영 요소**: 환경 변수, 사용자 음성·영상, 모델 가중치, DB·메시지 브로커·클라우드 연결 설정, 배포·CI 구성
+- **스냅샷 내 인터페이스 코드**: 일부 API 폴백·메시지 작업자에는 계약 검토와 화면 데모를 위한 목업 또는 후속 구현 TODO가 포함됩니다. 이를 실제 추론·운영 결과로 주장하지 않습니다.
+
+따라서 이 저장소는 코드 리뷰와 포트폴리오 열람을 위한 자료이며, 실행 가능 범위와 제외 항목은 [공개 소스 스냅샷](SOURCE_SNAPSHOT.md)에서 확인할 수 있습니다.
+
 ## 기술 스택
 
 | 영역 | 기술 |
@@ -167,9 +189,11 @@ AIVO는 SSAFY 공통 프로젝트 유저 테스트 프로그램에 선정되어,
 | Application | Java, Spring Boot, Spring Security, Spring Data JPA, WebSocket |
 | AI | faster-whisper-large-v3-turbo, LLM, MediaPipe Tasks Vision, Silero VAD |
 | Data | PostgreSQL, Redis, RabbitMQ |
-| Delivery | Docker, GitHub Actions, GitHub Container Registry, Spring Boot Actuator |
+| Team delivery history | Docker, GitHub Actions, GitHub Container Registry, Spring Boot Actuator (운영 설정은 공개하지 않음) |
 
 ## 아키텍처
+
+아래는 팀이 구성한 서비스 아키텍처입니다. 이 공개 스냅샷에는 운영 배포·CI 설정과 연결 정보가 포함되지 않으므로, 다이어그램의 모든 구성 요소를 이 저장소만으로 실행할 수 있다는 뜻은 아닙니다.
 
 ```mermaid
 flowchart TB

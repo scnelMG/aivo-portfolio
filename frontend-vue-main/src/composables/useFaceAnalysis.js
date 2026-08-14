@@ -108,7 +108,7 @@ export const useFaceAnalysis = () => {
         } catch (error) {
           failed.value = true
           if (import.meta.env?.DEV) {
-            console.info('[AIVO] MediaPipe 로드 실패(시선·자세 분석 없이 진행):', error?.message ?? error)
+            console.info('[aivo] MediaPipe 로드 실패(시선·자세 분석 없이 진행):', error?.message ?? error)
           }
         }
         return landmarker

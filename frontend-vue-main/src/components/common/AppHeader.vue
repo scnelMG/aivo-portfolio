@@ -105,8 +105,8 @@ const logout = async () => {
 <template>
   <header class="top-nav">
     <div class="nav-inner">
-      <RouterLink to="/" class="nav-logo" aria-label="AIVO 홈">
-        <span class="nav-logo-crop"><img :src="logo" alt="AIVO" /></span>
+      <RouterLink to="/" class="nav-logo" aria-label="aivo 홈">
+        <span class="nav-logo-crop"><img :src="logo" alt="aivo" /></span>
       </RouterLink>
 
       <nav class="nav-links" ref="navLinksEl">

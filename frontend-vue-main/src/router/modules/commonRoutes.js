@@ -6,7 +6,7 @@ export const commonRoutes = [
     meta: {
       layout: 'immersive',
       area: 'practice',
-      title: 'AIVO — 혼자 하는 연습에, 확신을 더하다.',
+      title: 'aivo — 혼자 하는 연습에, 확신을 더하다.',
       bodyClass: 'home-page',
     },
   },

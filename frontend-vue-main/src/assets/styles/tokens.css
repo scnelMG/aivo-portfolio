@@ -1,4 +1,4 @@
-/* AIVO design tokens — canonical source of the current pastel-glass look.
+/* aivo design tokens — canonical source of the current pastel-glass look.
    Values mirror the legacy `app.css :root` so migrated Vue components can rely
    on tokens instead of hard-coded colors. (The palette evolved from the early
    navy spec into this lavender-glass system; these are the values in use.) */

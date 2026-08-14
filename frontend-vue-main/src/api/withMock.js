@@ -12,7 +12,7 @@ export const withMock = async (request, mock) => {
     }
 
     if (import.meta.env?.DEV) {
-      console.info('[AIVO] API unavailable - using mock fallback:', error?.message ?? error)
+      console.info('[aivo] API unavailable - using mock fallback:', error?.message ?? error)
     }
     return typeof mock === 'function' ? mock() : mock
   }

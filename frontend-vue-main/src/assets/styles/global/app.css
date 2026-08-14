@@ -6391,7 +6391,7 @@ body.mypage-page :is(.mypage-nav, .mypage-info-card, .mypage-edit-card) {
 }
 
 /* ==================== bright light-mode glass system ====================
-   Shared visual layer for every AIVO screen. Layout dimensions and behavior
+   Shared visual layer for every aivo screen. Layout dimensions and behavior
    stay in the screen-specific rules above; this section only unifies color,
    surface, elevation, focus, and responsive glass treatment.
    ======================================================================== */

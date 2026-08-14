@@ -46,10 +46,10 @@ const scriptSlideList = [
     title: '서비스 소개',
     transcript: {
       prior: [
-        '안녕하세요. 발표 연습을 더 정확하게 만들어 주는 AIVO를 소개하겠습니다.',
+        '안녕하세요. 발표 연습을 더 정확하게 만들어 주는 aivo를 소개하겠습니다.',
         '혼자 발표를 연습하면 말하기 속도나 시선처럼 놓치기 쉬운 부분이 생깁니다.',
       ],
-      current: 'AIVO는 발표 자료와 실제 발화를 함께 분석해 개선이 필요한 순간을 찾아주는 연습 서비스입니다.',
+      current: 'aivo는 발표 자료와 실제 발화를 함께 분석해 개선이 필요한 순간을 찾아주는 연습 서비스입니다.',
       next: [
         '슬라이드별 대본과 실제 발화를 비교하고 음성과 몸짓 결과도 한 번에 확인할 수 있습니다.',
         '이제 연습부터 리포트까지 이어지는 과정을 순서대로 보여드리겠습니다.',
@@ -153,8 +153,8 @@ useDotField(dotFieldEl)
     <canvas ref="dotFieldEl" class="home-dot-field"></canvas>
   </div>
 
-  <a class="home-brand-crop" href="#home" aria-label="AIVO 홈" data-transition-role="logo">
-    <img :src="logoDark" class="home-brand-dark" alt="AIVO" />
+  <a class="home-brand-crop" href="#home" aria-label="aivo 홈" data-transition-role="logo">
+    <img :src="logoDark" class="home-brand-dark" alt="aivo" />
     <img :src="logoLight" class="home-brand-light" alt="" aria-hidden="true" />
   </a>
 
@@ -221,7 +221,7 @@ useDotField(dotFieldEl)
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8" /></svg>
           </a>
         </div>
-        <span class="home-hero-index" aria-hidden="true">AIVO · 01</span>
+        <span class="home-hero-index" aria-hidden="true">aivo · 01</span>
       </div>
     </section>
 
@@ -461,7 +461,7 @@ useDotField(dotFieldEl)
         </div>
 
         <footer class="home-footer" data-motion-footer>
-          <span>AIVO Copyright © 2026 AIVO.</span>
+          <span>aivo Copyright © 2026 aivo.</span>
           <a href="mailto:hello@aivo.app">hello@aivo.app</a>
         </footer>
       </div>

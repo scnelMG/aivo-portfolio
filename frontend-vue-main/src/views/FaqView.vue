@@ -131,7 +131,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   <main class="faq-shell">
     <header class="faq-head">
       <h1>FAQ</h1>
-      <p>AIVO 사용 중 자주 묻는 질문을 확인하세요.</p>
+      <p>aivo 사용 중 자주 묻는 질문을 확인하세요.</p>
     </header>
 
     <div class="faq-toolbar">

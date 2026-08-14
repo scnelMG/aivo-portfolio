@@ -425,7 +425,7 @@ export const useInterviewStore = defineStore('interview', () => {
       return unwrapApiResponse(response)
     } catch (error) {
       if (import.meta.env?.DEV) {
-        console.info('[AIVO] audio-analysis 실패(무시하고 진행):', error?.message ?? error)
+        console.info('[aivo] audio-analysis 실패(무시하고 진행):', error?.message ?? error)
       }
       return null
     }

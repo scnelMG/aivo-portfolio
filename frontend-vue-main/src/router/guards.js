@@ -19,7 +19,7 @@ export const installRouterGuards = (router) => {
     // Applying the destination body class in that case leaves the current
     // component mounted with another page's layout styles.
     if (failure) return
-    if (to.meta.title) document.title = `${to.meta.title} - AIVO`
+    if (to.meta.title) document.title = `${to.meta.title} - aivo`
     if (to.meta.bodyClass !== undefined) {
       document.body.className = to.meta.bodyClass
     }

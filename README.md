@@ -6,20 +6,17 @@
   </picture>
 </p>
 
-<p align="center">
-  <a href="SOURCE_SNAPSHOT.md">공개 소스 구조 보기</a>
-</p>
+<h1 align="center">AI 발표·면접 코칭 서비스</h1>
 
-<p align="center">
-  <strong>AI 발표·면접 코칭 서비스</strong><br />
-  혼자 하는 연습에, 확신을 더하다.
-</p>
+<p align="center">혼자 하는 연습에, 확신을 더하다.</p>
 
 <p align="center">
   <a href="https://aivo.ai.kr">서비스 바로가기</a>
   &nbsp;·&nbsp;
   <a href="https://ssafy-pjt-presentation-source.vercel.app/">발표 자료 보기</a>
 </p>
+
+<p align="center"><sub><a href="SOURCE_SNAPSHOT.md">공개 소스 구조 보기</a></sub></p>
 
 <p align="center">
   SSAFY 15기 공통 프로젝트 &nbsp;·&nbsp; 백구
@@ -39,21 +36,6 @@
 | 팀 구성 | SSAFY 15기 공통 프로젝트 · 백구 · 6인 |
 | 나의 책임 | 한국어 STT 설정, 짧은 필러 보완, 발화 이벤트·점수 산출 파이프라인 |
 | 검증 맥락 | 실제 서비스 화면, GPU 스모크 실행, 외부 유저 테스트 피드백 17건 |
-
-## 목차
-
-- [문제](#문제)
-- [aivo의 해결](#aivo의-해결)
-- [핵심 기능](#핵심-기능)
-- [연습 → 분석 → 기록](#연습--분석--기록)
-- [AI 음성 분석 구현](#ai-음성-분석-구현)
-- [AI 기여 및 의사결정](#ai-기여-및-의사결정)
-- [외부 유저 테스트](#외부-유저-테스트)
-- [공개 소스 범위](#공개-소스-범위)
-- [기술 스택](#기술-스택)
-- [아키텍처](#아키텍처)
-- [Team 백구](#team-백구)
-- [링크](#링크)
 
 ## 문제
 
@@ -231,3 +213,7 @@ aivo는 아래 6명이 함께 만든 프로젝트입니다.
 - [공개 소스 스냅샷](SOURCE_SNAPSHOT.md)
 - [포트폴리오 근거 지도](docs/evidence-map.md)
 - [외부 유저 테스트 요약](docs/user-testing.md)
+
+## 이용 안내
+
+이 저장소는 포트폴리오 열람을 위해 공개합니다. 코드·문서·이미지의 재사용, 수정, 배포는 사전 문의가 필요합니다.

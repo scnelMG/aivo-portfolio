@@ -85,14 +85,7 @@
 
 ## 연습 → 분석 → 기록
 
-```mermaid
-flowchart LR
-    A[연습 준비] --> B[발표 또는 면접 연습]
-    B --> C[음성·영상·답변 분석]
-    C --> D[맞춤 리포트]
-    D --> E[기록 비교와 다음 목표]
-    E --> A
-```
+> **연습 흐름**: 연습 준비 → 발표·면접 연습 → 음성·영상·답변 분석 → 맞춤 리포트 → 기록 비교와 다음 목표
 
 | 단계 | 사용자가 얻는 경험 |
 | --- | --- |
@@ -177,23 +170,7 @@ aivo는 SSAFY 공통 프로젝트 유저 테스트 프로그램에 선정되어,
 
 아래는 팀이 구성한 서비스 아키텍처입니다. 이 공개 스냅샷에는 운영 배포·CI 설정과 연결 정보가 포함되지 않으므로, 다이어그램의 모든 구성 요소를 이 저장소만으로 실행할 수 있다는 뜻은 아닙니다.
 
-```mermaid
-flowchart TB
-    U[사용자] --> FE[Vue 3 웹 클라이언트]
-    FE --> MEDIA[MediaPipe · Web Audio API]
-    FE <-->|REST · WebSocket| API[Spring Boot API]
-    API --> DB[(PostgreSQL)]
-    API --> CACHE[(Redis)]
-    API --> MQ[RabbitMQ]
-    MQ --> AI[STT · LLM · 비전 분석 워커]
-    AI --> DB
-    API --> REPORT[맞춤 리포트]
-    REPORT --> FE
-    ACTIONS[GitHub Actions] --> GHCR[GitHub Container Registry]
-    GHCR --> DOCKER[Docker 배포]
-    DOCKER --> API
-    API --> HEALTH[Actuator 헬스체크]
-```
+> **연동 구조**: 사용자 → Vue 3 웹 클라이언트(MediaPipe·Web Audio API) ↔ Spring Boot API → PostgreSQL·Redis·RabbitMQ → STT·LLM·비전 분석 워커 → 맞춤 리포트. GitHub Actions·GHCR·Docker·Actuator는 배포·상태 점검 흐름을 담당합니다.
 
 ## Team 백구
 

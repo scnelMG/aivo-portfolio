@@ -19,7 +19,7 @@
 <p align="center"><sub><a href="SOURCE_SNAPSHOT.md">공개 소스 구조 보기</a></sub></p>
 
 <p align="center">
-  SSAFY 15기 공통 프로젝트 &nbsp;·&nbsp; 백구
+  SSAFY 15기 공통 프로젝트 &nbsp;·&nbsp; 2026.07–08 &nbsp;·&nbsp; 백구
 </p>
 
 <p align="center">

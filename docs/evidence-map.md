@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | 발표·면접 연습에서 음성·영상·답변을 함께 다룬 서비스 경험 | [README의 실제 서비스 화면](../README.md#핵심-기능) | 이미지가 실제 구현 화면임을 보여주며, 운영 지표나 사용자 성과를 뜻하지 않음 |
 | AI 음성 분석의 전사·필러 보완·이벤트 분류 구조 | [FastAPI 코드 안내](../backend-fastapi-main/README.md), [`models/filer/src/`](../backend-fastapi-main/models/filer/src/) | 공개 코드 스냅샷에서 구현 구조와 설계 의도를 확인할 수 있음 |
-| 박민규의 AI 기여 | [공개 소스 스냅샷](../SOURCE_SNAPSHOT.md), [README의 AI 기여](../README.md#ai-기여-및-의사결정) | 공개된 AI 코드 경로와 문서에 한정해 설명함 |
+| 박민규의 AI 기여 | [공개 소스 스냅샷](../SOURCE_SNAPSHOT.md), [README의 AI 기여](../README.md#ai-구현-및-의사결정) | 공개된 AI 코드 경로와 문서에 한정해 설명함 |
 | Spring Boot·FastAPI·Vue로 나뉜 팀 구현 구조 | [공개 소스 스냅샷](../SOURCE_SNAPSHOT.md) | 팀 구현의 모듈 경계만 공개하며 운영 배포 설정은 포함하지 않음 |
 | 외부 유저 테스트에서 얻은 개선 기회 | [유저 테스트 요약](user-testing.md) | 17건 피드백의 주제와 우선순위를 요약하며, 해결 완료나 서비스 효과를 단정하지 않음 |
 

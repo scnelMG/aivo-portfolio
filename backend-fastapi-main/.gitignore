@@ -36,6 +36,8 @@ models/*
 models/filer/*
 !models/filer/src/
 !models/filer/src/**
+models/filer/src/**/__pycache__/
+models/filer/src/**/*.py[cod]
 cache/
 
 # Docker / build

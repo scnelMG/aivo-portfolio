@@ -22,6 +22,23 @@
 
 반면 운영 환경에서만 의미가 있는 연결 코드와 일부 화면 데모용 경로에는 목업 응답 또는 후속 구현 TODO가 남아 있습니다. 예를 들어 프론트엔드는 API 연결이 불가능할 때 제한적으로 로컬 목업을 사용할 수 있고, FastAPI 메시지 작업자의 일부 LLM·음성 작업은 계약과 처리 흐름을 보여주는 인터페이스입니다. 이 코드를 실제 모델 추론 또는 운영 품질의 증거로 사용하지 않습니다.
 
+## 공개 코드 회귀 테스트
+
+저장소 루트에서 Python 3.12 가상환경을 만든 뒤 실행합니다.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install "torch>=2.13,<3" --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r backend-fastapi-main/requirements-coaching-test.txt
+$env:PYTHONPATH = "$PWD/backend-fastapi-main/models/filer/src"
+python -m pytest backend-fastapi-main/tests/coaching -q
+```
+
+Linux/macOS에서는 가상환경 활성화 후 `PYTHONPATH=backend-fastapi-main/models/filer/src python -m pytest backend-fastapi-main/tests/coaching -q`로 실행합니다.
+
+이 검사는 공개된 필러 보완·중복 병합·창 시각 변환·침묵 구간·리뷰 집계를 확인합니다. 모델 가중치나 사용자 녹음은 다운로드하지 않습니다. 현재 커밋의 결과는 [Coaching tests](https://github.com/scnelMG/aivo-portfolio/actions/workflows/coaching-tests.yml)에 남습니다. 전체 서비스·GPU 추론이나 직접 라벨링한 발표 평가의 재실행을 뜻하지 않습니다.
+
 ## 의도적으로 제외한 항목
 
 운영 환경을 그대로 복제하거나 비밀값을 노출하지 않기 위해 다음 항목은 포함하지 않았습니다.
@@ -31,6 +48,6 @@
 - 사용자 음성/영상, DB 덤프, 모델 가중치, 캐시·컴파일 산출물
 - 내부 작업 계획·운영 문서와 원본 Git 이력
 
-원본 팀의 Docker·CI·컨테이너 레지스트리 구성도 공개 스냅샷에는 포함하지 않았습니다. 루트 README의 아키텍처와 기술 스택에서 해당 항목은 팀의 운영 구성 이력을 설명하는 용도입니다.
+원본 팀의 Docker·운영 CI·컨테이너 레지스트리 구성도 공개 스냅샷에는 포함하지 않았습니다. 공개 저장소의 `Coaching tests`는 별도의 CPU 회귀 검사입니다. 루트 README의 아키텍처와 기술 스택에서 운영 구성은 팀의 구현 이력을 설명하는 용도입니다.
 
 따라서 이 공개 스냅샷은 **코드 리뷰와 포트폴리오 열람**을 위한 것이며, 운영 서비스를 그대로 실행하기 위한 배포 레포가 아닙니다.

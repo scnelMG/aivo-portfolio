@@ -4,6 +4,8 @@
 
 | 공개 주장 | 확인 위치 | 해석 범위 |
 | --- | --- | --- |
+| 직접 라벨링한 평가의 탐지 정확도 5.5% → 76%, 발화 분석 41.5초 → 4.3초 | [최종 발표자료](https://ssafy-pjt-presentation-source.vercel.app/), [README 평가 표](../README.md#직접-라벨링한-발표-평가) | 박민규의 직접 라벨링 평가. 뷰어 22–24번 / 원본 30–32번. 발표자료의 지표명을 유지하며 스모크 전사 시간·정밀도·재현율과 혼용하지 않음 |
+| 현재 공개 음성 로직의 회귀 검사 | [Coaching tests](https://github.com/scnelMG/aivo-portfolio/actions/workflows/coaching-tests.yml), [테스트 코드](../backend-fastapi-main/tests/coaching/test_coaching.py) | CPU에서 합성 입력과 scripted transcriber로 로직을 검사하며 실제 음성 정확도 평가를 대체하지 않음 |
 | 발표·면접 연습에서 음성·영상·답변을 함께 다룬 서비스 경험 | [README의 실제 서비스 화면](../README.md#핵심-기능) | 이미지가 실제 구현 화면임을 보여주며, 운영 지표나 사용자 성과를 뜻하지 않음 |
 | AI 음성 분석의 전사·필러 보완·이벤트 분류 구조 | [FastAPI 코드 안내](../backend-fastapi-main/README.md), [`models/filer/src/`](../backend-fastapi-main/models/filer/src/) | 공개 코드 스냅샷에서 구현 구조와 설계 의도를 확인할 수 있음 |
 | 박민규의 AI 기여 | [공개 소스 스냅샷](../SOURCE_SNAPSHOT.md), [README의 AI 기여](../README.md#ai-구현-및-의사결정) | 공개된 AI 코드 경로와 문서에 한정해 설명함 |

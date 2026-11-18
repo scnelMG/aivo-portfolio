@@ -34,8 +34,8 @@ aivo는 발표·면접 연습의 음성·영상·답변을 분석해 맞춤 피�
 | 해결한 문제 | 직접 구현한 방식 | 코드·검증 근거 |
 | --- | --- | --- |
 | 짧은 필러 누락·중복 검출 | 전체 전사를 유지하면서 **8초 창 재전사**로 필러를 보완하고, **0.3초 이내 동일 검출**을 병합했다 | [필러 보완·병합](backend-fastapi-main/models/filer/src/presentation_coaching_filler_rescue.py) |
-| 전사문만으로 구분하기 어려운 발화 습관 | VAD·피치·RMS와 단어 시각을 조합해 필러·반복·쉼·말하기 속도를 코칭 이벤트와 점수로 연결했다 | [이벤트 분석](backend-fastapi-main/models/filer/src/presentation_coaching_events.py) · [점수 산출](backend-fastapi-main/models/filer/src/presentation_coaching_scoring.py) |
-| 정상 음성 예시만으로 놓치는 경계 조건 | 합성 입력으로 필러 병합·재전사 창 시각·침묵 구간을 회귀 검사했다 | [테스트 코드](backend-fastapi-main/tests/coaching/test_coaching.py) · [CI 실행 기록](https://github.com/scnelMG/aivo-portfolio/actions/workflows/coaching-tests.yml) |
+| 전사문만으로 구분하기 어려운 발화 습관 | 발화 구간(VAD)·피치·RMS와 단어별 발화 시각으로 필러·반복·쉼·말하기 속도를 분석하고 코칭 이벤트·점수를 산출했다 | [이벤트 분석](backend-fastapi-main/models/filer/src/presentation_coaching_events.py) · [점수 산출](backend-fastapi-main/models/filer/src/presentation_coaching_scoring.py) |
+| 정상 음성 예시만으로 놓치는 경계 조건 | 합성 입력으로 필러 병합·재전사 창의 시각·침묵 구간을 회귀 검사했다 | [테스트 코드](backend-fastapi-main/tests/coaching/test_coaching.py) · [CI 실행 기록](https://github.com/scnelMG/aivo-portfolio/actions/workflows/coaching-tests.yml) |
 
 공개 회귀 검사는 로직의 기대 동작을 확인한다. 실제 음성 탐지 성능과 발표 당시의 비교 수치는 아래 [발표 평가 기록](#직접-라벨링한-발표-평가)에서 별도로 다룬다.
 
@@ -119,7 +119,7 @@ aivo는 발표·면접 연습의 음성·영상·답변을 분석해 맞춤 피�
 
 ## AI 음성 분석 구현
 
-한국어 발표에서는 문법적으로 매끄러운 전사보다 실제 발화의 필러·반복·쉼을 보존하는 것이 중요했다. `faster-whisper-large-v3-turbo`의 단어별 시각 전사를 바탕으로, 짧은 필러를 보완하기 위한 8초 재전사와 0.3초 이내 중복 병합을 구현했다. 이후 Silero VAD·피치·RMS 연속성으로 필러·반복·긴 쉼·늘여 말하기·말하기 속도를 근거와 함께 코칭 이벤트로 만들었다.
+한국어 발표에서는 문법적으로 매끄러운 전사보다 실제 발화의 필러·반복·쉼을 보존하는 것이 중요했다. `faster-whisper-large-v3-turbo`의 단어별 발화 시각이 포함된 전사를 바탕으로, 짧은 필러를 보완하기 위한 8초 재전사와 0.3초 이내 중복 병합을 구현했다. 이후 Silero VAD·피치·RMS 연속성으로 필러·반복·긴 쉼·늘여 말하기·말하기 속도를 근거와 함께 코칭 이벤트로 만들었다.
 
 | 실제 GPU 스모크 실행 | 결과 |
 | --- | ---: |
@@ -159,7 +159,7 @@ GPU 스모크 실행의 측정값과 당시 테스트 이력은 [위 표](#ai-�
 
 > 수치는 특정 GPU·오디오 조건에서의 실행 결과이며, 사용자 점수의 절대적 정확도를 뜻하지 않는다. 리포트는 연습 방향을 제안하는 코칭 도구로 설계했다.
 
-현재 공개 코드의 회귀 검사는 [Coaching tests](https://github.com/scnelMG/aivo-portfolio/actions/workflows/coaching-tests.yml)에서 커밋별로 확인할 수 있다. 필러 병합·중복 제거·재전사 창 시각·침묵 구간·리뷰 집계를 CPU에서 검사하며, 실험 당시 `27 passed`와는 별도다. 실행 방법은 [공개 소스 스냅샷](SOURCE_SNAPSHOT.md#공개-코드-회귀-테스트)에 있다.
+현재 공개 코드의 회귀 검사는 [Coaching tests](https://github.com/scnelMG/aivo-portfolio/actions/workflows/coaching-tests.yml)에서 커밋별로 확인할 수 있다. 필러 병합·중복 제거·재전사 창의 시각·침묵 구간·리뷰 집계를 CPU에서 검사하며, 실험 당시 `27 passed`와는 별도다. 실행 방법은 [공개 소스 스냅샷](SOURCE_SNAPSHOT.md#공개-코드-회귀-테스트)에 있다.
 
 ## 외부 유저 테스트
 
